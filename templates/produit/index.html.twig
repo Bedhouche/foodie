@@ -1,3 +1,6 @@
+{% extends 'base.html.twig' %}
+
+
 {% block stylesheets %}
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -31,15 +34,15 @@
 
             <div class="container grid grid--3-cols margin-bottom-md" style="margin-top: 7rem">
                 {% for produit in produits %}
-                    <div class="meal">
-                        <img src="{{ asset('uploads/' ~ produit.image) }}" class="meal-img" alt="{{ produit.nom }}" />
-                        <div class="meal-content">
-                            <p class="meal-title">{{ produit.nom }}</p>
-                            <div class="meal-ingredients">
-                                {{ produit.ingredients }}
+                    <div class="meal1" >
+                        <img src="{{ asset('uploads/' ~ produit.image) }}" class="meal-img1" alt="{{ produit.nom }}" />
+                        <div class="meal-content1">
+                            <p class="meal-title1">{{ produit.nom }}</p>
+                            <div class="meal-ingredients1">
+                                {{ produit.ingredients | raw }}
                             </div>
                             {% set prixDivise = produit.prix / 100 %}
-                            <p class="meal-price">€{{ prixDivise }}</p>
+                            <p class="meal-price1">€{{ prixDivise }}</p>
                             <a href="{{ path('panier_add', {id: produit.id}) }}" class="btn cart">Ajouter au panier</a>
                         </div>
                     </div>
